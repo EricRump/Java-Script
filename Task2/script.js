@@ -16,6 +16,8 @@ console.log(calcGrossPrice(40, 0.16));
 
 // TODO: Implement the addPositive function
 function addPositive(a, b) {
+  a = Math.abs(a);
+  b = Math.abs(b);
   return a + b;
 }
 console.log(addPositive(2, 3));
