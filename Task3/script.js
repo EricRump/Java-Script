@@ -9,9 +9,9 @@ console.log(getUserNameLength(userName) > 4);
 // ^______________ Should log true
 
 // TODO: Implement the isString function
-function isString(value) {
+const isString = function (value) {
   return typeof value === "string";
-}
+};
 
 console.log(isString("Hello"));
 // result should be true
