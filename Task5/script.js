@@ -1,6 +1,4 @@
 // TODO: Implement the oddNumbers function
-//const isOdd = (number) => number % 2 !== 0;
-
 function oddNumbers(a, b) {
   let result = "";
   for (let i = a; i <= b; i++) {
@@ -18,17 +16,26 @@ console.log(oddNumbers(0, 4));
 console.log(oddNumbers(10, 33));
 // result should be: 11,13,15,17,19,21,23,25,27,29,31,33
 
-//console.log(oddNumbers(9, 12));
+console.log(oddNumbers(9, 12));
 // result should be: 9,11
 
 // TODO: Implement the charCount function
+
 function charCount(word, letter) {
-  wordlength = word.length;
-  for (let i = 0; i < wordlength; i++) {
-    if (word.charAt(i) === letter) count++;
-    else i + 1;
+  if (letter.length !== 1) {
+    return "the second character musste be a single character";
   }
 
+  const lowerWord = word.toLowerCase();
+  const lowerLetter = letter.toLowerCase();
+
+  let count = 0;
+
+  for (let i = 0; i <= lowerWord.length; i++) {
+    if (lowerWord[i] === lowerLetter) {
+      count++;
+    }
+  }
   return count;
 }
 
