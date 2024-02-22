@@ -165,3 +165,64 @@ function yearDays(year) {
     return year + " has 365 days";
   }
 }
+
+//Vowel Count
+
+function getCount(str) {
+  let count = 0;
+  for (i = 0; i <= str.length; i++) {
+    if (str[i] === "a") {
+      count++;
+    }
+    if (str[i] === "e") {
+      count++;
+    }
+    if (str[i] === "i") {
+      count++;
+    }
+    if (str[i] === "o") {
+      count++;
+    }
+    if (str[i] === "u") {
+      count++;
+    }
+  }
+  return count;
+}
+
+//Isograms
+
+function isIsogram(str) {
+  const charCount = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i].toLowerCase();
+    if (charCount[char]) {
+      return false;
+    }
+    charCount[char] = true;
+  }
+  return true;
+}
+
+//Get the Middle Character
+
+function getMiddle(s) {
+  let middle = Math.floor(s.length / 2);
+  if (s.length % 2 === 0) {
+    return s.substring(middle - 1, middle + 1);
+  } else {
+    return s.charAt(middle);
+  }
+}
+
+//Even numbers in an array
+
+function evenNumbers(array, number) {
+  const DevenNumbers = [];
+  for (let i = array.length - 1; i >= 0 && DevenNumbers.length < number; i--) {
+    if (array[i] % 2 === 0) {
+      DevenNumbers.unshift(array[i]);
+    }
+  }
+  return DevenNumbers;
+}
