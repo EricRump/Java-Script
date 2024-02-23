@@ -226,3 +226,57 @@ function evenNumbers(array, number) {
   }
   return DevenNumbers;
 }
+
+//Remove First and Last Character
+
+function removeChar(str) {
+  let char1 = str.slice(1, -1);
+  return char1;
+}
+
+//Credit Card Mask
+
+function maskify(str) {
+  if (str.length > 4) {
+    let num = str.slice(-4);
+    let mask = "#".repeat(str.length - 4) + num;
+    return mask;
+  } else {
+    return str;
+  }
+}
+
+//Mumbling
+
+function accum(s) {
+  // Initialize an empty array to store the result
+  const result = [];
+
+  // Iterate over each character in the input string
+  for (let i = 0; i < s.length; i++) {
+    // Build the pattern for the current character
+    const pattern = s[i].toUpperCase() + s[i].toLowerCase().repeat(i);
+
+    // Push the pattern to the result array
+    result.push(pattern);
+  }
+
+  // Join the patterns together with "-"
+  return result.join("-");
+}
+
+//Descending Order
+
+function descendingOrder(n) {
+  // Schritt 1: Die Ganzzahl in eine Zeichenkette umwandeln
+  const digits = String(n);
+
+  // Schritt 2: Die Ziffern sortieren (in absteigender Reihenfolge)
+  const sortedDigits = digits.split("").sort((a, b) => b - a);
+
+  // Schritt 3: Die sortierten Ziffern zu einer neuen Zeichenkette zusammenfügen
+  const result = sortedDigits.join("");
+
+  // Schritt 4: Die neue Zeichenkette in eine Ganzzahl umwandeln und zurückgeben
+  return parseInt(result);
+}
