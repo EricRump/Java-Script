@@ -377,3 +377,27 @@ function bmi(weight, height) {
     return "Obese";
   }
 }
+
+//Twice as old
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  if (dadYearsOld > sonYearsOld * 2) {
+    for (let i = dadYearsOld; i > 0; i--) {
+      if (i === sonYearsOld * 2) {
+        return dadYearsOld - i;
+      }
+    }
+  }
+  if (dadYearsOld < sonYearsOld * 2) {
+    for (let i = dadYearsOld; i < sonYearsOld * 3; i++) {
+      if (i === sonYearsOld * 2) {
+        return i - dadYearsOld;
+      }
+    }
+  }
+  if (sonYearsOld === 0) {
+    return dadYearsOld;
+  } else {
+    return 0;
+  }
+}

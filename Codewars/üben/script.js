@@ -1,19 +1,19 @@
-function likeOrDislike(buttons) {
-  for (i = 0; i < buttons.length; i++) {
-    if (buttons[i] === buttons[i + 1]) {
-      return;
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  if (dadYearsOld > sonYearsOld * 2) {
+    for (let i = dadYearsOld; i > 0; i--) {
+      if (i === sonYearsOld * 2) {
+        return dadYearsOld - i;
+      }
     }
   }
+  if (dadYearsOld < sonYearsOld * 2) {
+    for (let i = dadYearsOld; i < sonYearsOld * 2; i++) {
+      if (i === sonYearsOld * 2) {
+        return i - dadYearsOld;
+      }
+    }
+  } else {
+    return dadYearsOld;
+  }
 }
-console.log(
-  likeOrDislike(
-    "Like",
-    "Like",
-    "Dislike",
-    "Like",
-    "Like",
-    "Like",
-    "Like",
-    "Dislike"
-  )
-); // Dislike
+console.log(twiceAsOld(36, 8));
