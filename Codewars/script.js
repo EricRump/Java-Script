@@ -280,3 +280,100 @@ function descendingOrder(n) {
   // Schritt 4: Die neue Zeichenkette in eine Ganzzahl umwandeln und zurückgeben
   return parseInt(result);
 }
+
+//Baby shark lyrics generator
+/*function babySharkLyrics(){
+  let baby = "Baby shark, doo doo doo doo doo doo\n".repeat(3) + "Baby shark!\n";
+  let mommy = baby.replace(/Baby/g, "Mommy");
+  let daddy = baby.replace(/Baby/g, "Daddy");
+  let grandma = baby.replace(/Baby/g, "Grandma");
+  let grandpa = baby.replace(/Baby/g, "Grandpa");
+  let hunt = baby.replace(/Baby shark/g, "Let's go hunt");
+  return baby + mommy + daddy + grandma + grandpa + hunt + "Run away,...";
+}*/
+// Baby shark lyrics generator
+
+function babySharkLyrics() {
+  let r = "";
+  const a = [
+    "Baby shark",
+    "Mommy shark",
+    "Daddy shark",
+    "Grandma shark",
+    "Grandpa shark",
+    "Let's go hunt",
+    " doo".repeat(6) + "\n",
+  ];
+  for (i = 0; i < a.length - 1; i++) {
+    r += (a[i] + "," + a[6]).repeat(3) + a[i] + "!\n";
+  }
+  return r + "Run away,…";
+}
+
+//Likes Vs Dislikes
+function likeOrDislike(buttons) {
+  let state = "Nothing"; // Initial state
+  for (let button of buttons) {
+    if (button === "Like") {
+      if (state === "Like") {
+        state = "Nothing"; // Toggle state from Like to Nothing
+      } else if (state === "Dislike") {
+        state = "Like"; // Set state to Like (overrides Dislike)
+      } else {
+        state = "Like"; // Set state to Like
+      }
+    } else if (button === "Dislike") {
+      if (state === "Dislike") {
+        state = "Nothing"; // Toggle state from Dislike to Nothing
+      } else if (state === "Like") {
+        state = "Dislike"; // Set state to Dislike (overrides Like)
+      } else {
+        state = "Dislike"; // Set state to Dislike
+      }
+    }
+  }
+  return state;
+}
+
+//Band name generator
+
+function bandNameGenerator(str) {
+  str = str.toLowerCase();
+  if (str[0] === str[str.length - 1]) {
+    return str.charAt(0).toUpperCase() + str.slice(1).repeat(2);
+  } else {
+    return "The " + str.charAt(0).toUpperCase() + str.slice(1);
+  }
+}
+
+//Thinkful - Logic Drills: Traffic light
+
+function updateLight(current) {
+  if (current === "green") {
+    return "yellow";
+  }
+  if (current === "yellow") {
+    return "red";
+  }
+  if (current === "red") {
+    return "green";
+  }
+}
+
+// Calculate BMI
+
+function bmi(weight, height) {
+  let body = weight / height ** 2;
+  if (body <= 18.5) {
+    return "Underweight";
+  }
+  if (body <= 25) {
+    return "Normal";
+  }
+  if (body <= 30) {
+    return "Overweight";
+  }
+  if (body > 30) {
+    return "Obese";
+  }
+}
