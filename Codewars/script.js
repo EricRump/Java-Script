@@ -524,3 +524,49 @@ function alphabetWar(fight) {
     return "Let's fight again!";
   }
 }
+
+//Simple card game
+
+function winner(deckSteve, deckJosh) {
+  const charValues = {
+    2: 1,
+    3: 2,
+    4: 3,
+    5: 4,
+    6: 5,
+    7: 6,
+    8: 7,
+    9: 8,
+    T: 9,
+    J: 10,
+    Q: 11,
+    K: 12,
+    A: 13,
+  };
+  let countSteve = 0;
+  let countJosh = 0;
+
+  for (i = 0; i < deckSteve.length; i++) {
+    let character1 = deckSteve[i];
+    let character2 = deckJosh[i];
+
+    let char1 = charValues[character1];
+    let char2 = charValues[character2];
+
+    if (char1 < char2) {
+      countJosh++;
+    }
+    if (char1 > char2) {
+      countSteve++;
+    }
+  }
+  if (countJosh > countSteve) {
+    return "Josh wins " + countJosh + " to " + countSteve;
+  }
+  if (countJosh < countSteve) {
+    return "Steve wins " + countSteve + " to " + countJosh;
+  }
+  if (countJosh === countSteve) {
+    return "Tie";
+  }
+}
