@@ -401,3 +401,80 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
     return 0;
   }
 }
+
+//Cat years, Dog years
+
+var humanYearsCatYearsDogYears = function (humanYears) {
+  let cat = 0;
+  let dog = 0;
+  if (humanYears === 1) {
+    cat += 15;
+    dog += 15;
+  }
+  if (humanYears === 2) {
+    cat += 24;
+    dog += 24;
+  }
+  if (humanYears > 2) {
+    cat += 24 + (humanYears - 2) * 4;
+    dog += 24 + (humanYears - 2) * 5;
+  }
+  return [humanYears, cat, dog];
+};
+
+//Who is the killer?
+
+function killer(suspects, dead) {
+  for (let i = 0; i < Object.keys(suspects).length; i++) {
+    const suspect = Object.keys(suspects)[i];
+    let allDeadFound = true;
+    for (let j = 0; j < dead.length; j++) {
+      const deadPerson = dead[j];
+      if (!suspects[suspect].includes(deadPerson)) {
+        allDeadFound = false;
+        break;
+      }
+    }
+    if (allDeadFound) {
+      return suspect;
+    }
+  }
+}
+
+//Name Shuffler
+
+function nameShuffler(str) {
+  let name = str.split(" ");
+  let dreh = name.reverse();
+  let result = dreh.join(" ");
+  return result;
+}
+
+//Who's Online?
+
+function whosOnline(friends) {
+  let result = { online: [], offline: [], away: [] };
+
+  for (let i = 0; i < friends.length; i++) {
+    let user = friends[i];
+    if (user.status === "online" && user.lastActivity <= 10) {
+      result.online.push(user.username);
+    }
+    if (user.status === "offline") {
+      result.offline.push(user.username);
+    }
+    if (user.status === "online" && user.lastActivity > 10) {
+      result.away.push(user.username);
+    }
+  }
+  if (result.online.length === 0) {
+    delete result.online;
+  }
+  if (result.offline.length === 0) {
+    delete result.offline;
+  }
+  if (result.away.length === 0) {
+    delete result.away;
+  }
+  return result;
+}

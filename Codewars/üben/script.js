@@ -1,19 +1,19 @@
-function twiceAsOld(dadYearsOld, sonYearsOld) {
-  if (dadYearsOld > sonYearsOld * 2) {
-    for (let i = dadYearsOld; i > 0; i--) {
-      if (i === sonYearsOld * 2) {
-        return dadYearsOld - i;
+function killer(suspectInfo, dead) {
+  for (let i = 0; i < suspectInfo.length; i++) {
+    let subArray = suspectInfo[i];
+    for (let j = 0; j < subArray.length; j++) {
+      let element = subArray[j];
+      if (element === dead) {
+        return suspectInfo[i];
       }
     }
-  }
-  if (dadYearsOld < sonYearsOld * 2) {
-    for (let i = dadYearsOld; i < sonYearsOld * 2; i++) {
-      if (i === sonYearsOld * 2) {
-        return i - dadYearsOld;
-      }
-    }
-  } else {
-    return dadYearsOld;
   }
 }
-console.log(twiceAsOld(36, 8));
+console.log(
+  killer(
+    "James"[("Jacob", "Bill", "Lucas")],
+    "Johnny"[("David", "Kyle", "Lucas")],
+    "Peter"[("Lucy", "Kyle")],
+    ["Lucas", "Bill"]
+  )
+);
